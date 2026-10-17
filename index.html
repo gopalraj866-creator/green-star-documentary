@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Real Green Star — WD J1330+6435 (scientific visualization)</title>
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+</script>
+<style>
+@font-face{font-family:Inter;font-weight:400;src:url(./vendor/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;src:url(./vendor/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;src:url(./vendor/fonts/inter-latin-600-normal.woff2) format("woff2")}
+</style>
+<style id="app-css"></style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl"></canvas>
+  <canvas id="diagram"></canvas>
+  <div id="text"></div>
+  <div id="persist"><i></i>SCIENTIFIC VISUALIZATION</div>
+  <div id="brandmark">TECHNICAL TALK INDIA</div>
+  <div id="blackout"></div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

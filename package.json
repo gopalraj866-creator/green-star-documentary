@@ -1,0 +1,18 @@
+{
+  "name": "real-green-star",
+  "version": "1.0.0",
+  "description": "The Real Green Star (WD J1330+6435) - 8 minute Three.js WebGL documentary, deterministic frame export",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "verify": "node scripts/verify-timeline.mjs",
+    "preview": "node scripts/preview-server.mjs",
+    "cues": "node scripts/export-cues.mjs",
+    "shot": "node scripts/shot.mjs",
+    "render": "node scripts/render.mjs",
+    "assemble": "node scripts/assemble.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  }
+}
