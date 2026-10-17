@@ -1,0 +1,67 @@
+1
+00:00:08,000 --> 00:00:17,000
+Out in the dark, far beyond the Solar System, there is a star that does not look the way stars are supposed to look.
+
+2
+00:00:24,000 --> 00:00:33,000
+Stars come in many colours, but green is almost never one of them. So what is going on?
+
+3
+00:00:46,000 --> 00:00:55,000
+This is WD J1330+6435, a white dwarf roughly 280 light-years from Earth. Astronomers report that its modelled colour is a pale chartreuse green.
+
+4
+00:01:10,000 --> 00:01:19,000
+What you see on the surface is an artistic visualization. Nobody has seen detail on a star this distant.
+
+5
+00:01:33,000 --> 00:01:42,000
+To understand the colour, we start with the life of a Sun-like star. It swells into a red giant.
+
+6
+00:01:59,000 --> 00:02:08,000
+It sheds its outer layers into space, and leaves behind a hot, dense core: a white dwarf.
+
+7
+00:02:24,000 --> 00:02:33,000
+Around some white dwarfs, rocky debris from a former planetary system orbits and falls inward.
+
+8
+00:02:50,000 --> 00:02:59,000
+That planetary material can pollute the star’s atmosphere with elements you would never expect there.
+
+9
+00:03:23,000 --> 00:03:32,000
+Astronomers study starlight by spreading it into a spectrum. Sodium in the dense atmosphere absorbs broadly across the orange part of that spectrum.
+
+10
+00:03:54,000 --> 00:04:03,000
+Feed that spectrum into a model of human colour vision, and the star’s apparent colour changes. That is how the green is modelled.
+
+11
+00:04:24,000 --> 00:04:33,000
+A white dwarf is the dense remnant of an evolved star. This diagram is a schematic, not a view inside.
+
+12
+00:04:56,000 --> 00:05:05,000
+A typical white dwarf is roughly the size of Earth, with about half the mass of the Sun.
+
+13
+00:05:26,000 --> 00:05:35,000
+Here, the debris is the remains of a former planetary system. Paths and distances are illustrative.
+
+14
+00:06:02,000 --> 00:06:11,000
+Dust and rock, lit by the remnant’s faint light, spiral inward over time.
+
+15
+00:06:32,000 --> 00:06:41,000
+One last orbit around the star, and its modelled colour.
+
+16
+00:07:10,000 --> 00:07:19,000
+The universe is more colourful than we imagined.
+
+17
+00:07:32,000 --> 00:07:41,000
+What should we explore next?

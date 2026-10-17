@@ -1,0 +1,201 @@
+{
+  "fps": 30,
+  "duration": 480,
+  "scenes": [
+    {
+      "id": 1,
+      "t0": 0,
+      "t1": 40,
+      "name": "THE MYSTERIOUS GREEN STAR"
+    },
+    {
+      "id": 2,
+      "t0": 40,
+      "t1": 90,
+      "name": "REVEAL: WD J1330+6435"
+    },
+    {
+      "id": 3,
+      "t0": 90,
+      "t1": 140,
+      "name": "A STAR’S LONG LIFE"
+    },
+    {
+      "id": 4,
+      "t0": 140,
+      "t1": 200,
+      "name": "PLANETARY DEBRIS"
+    },
+    {
+      "id": 5,
+      "t0": 200,
+      "t1": 260,
+      "name": "THE SPECTRUM"
+    },
+    {
+      "id": 6,
+      "t0": 260,
+      "t1": 320,
+      "name": "SCHEMATIC CROSS-SECTION"
+    },
+    {
+      "id": 7,
+      "t0": 320,
+      "t1": 390,
+      "name": "A FORMER PLANETARY SYSTEM"
+    },
+    {
+      "id": 8,
+      "t0": 390,
+      "t1": 480,
+      "name": "FINAL ORBIT & PULLBACK"
+    }
+  ],
+  "cues": [
+    {
+      "t": 0,
+      "kind": "music",
+      "text": "Ambient space bed in (optional, user-supplied)"
+    },
+    {
+      "t": 8,
+      "kind": "narration",
+      "text": "Out in the dark, far beyond the Solar System, there is a star that does not look the way stars are supposed to look."
+    },
+    {
+      "t": 22,
+      "kind": "sfx",
+      "text": "Soft rising swell into the hook caption"
+    },
+    {
+      "t": 24,
+      "kind": "narration",
+      "text": "Stars come in many colours, but green is almost never one of them. So what is going on?"
+    },
+    {
+      "t": 40,
+      "kind": "sfx",
+      "text": "Reveal: low gentle tone"
+    },
+    {
+      "t": 46,
+      "kind": "narration",
+      "text": "This is WD J1330+6435, a white dwarf roughly 280 light-years from Earth. Astronomers report that its modelled colour is a pale chartreuse green."
+    },
+    {
+      "t": 70,
+      "kind": "narration",
+      "text": "What you see on the surface is an artistic visualization. Nobody has seen detail on a star this distant."
+    },
+    {
+      "t": 90,
+      "kind": "sfx",
+      "text": "Transition: soft whoosh into evolution sequence"
+    },
+    {
+      "t": 93,
+      "kind": "narration",
+      "text": "To understand the colour, we start with the life of a Sun-like star. It swells into a red giant."
+    },
+    {
+      "t": 118,
+      "kind": "sfx",
+      "text": "Shell expulsion: slow swell"
+    },
+    {
+      "t": 119,
+      "kind": "narration",
+      "text": "It sheds its outer layers into space, and leaves behind a hot, dense core: a white dwarf."
+    },
+    {
+      "t": 140,
+      "kind": "sfx",
+      "text": "Transition into debris sequence"
+    },
+    {
+      "t": 144,
+      "kind": "narration",
+      "text": "Around some white dwarfs, rocky debris from a former planetary system orbits and falls inward."
+    },
+    {
+      "t": 170,
+      "kind": "narration",
+      "text": "That planetary material can pollute the star’s atmosphere with elements you would never expect there."
+    },
+    {
+      "t": 200,
+      "kind": "sfx",
+      "text": "Transition into spectrum display"
+    },
+    {
+      "t": 203,
+      "kind": "narration",
+      "text": "Astronomers study starlight by spreading it into a spectrum. Sodium in the dense atmosphere absorbs broadly across the orange part of that spectrum."
+    },
+    {
+      "t": 232,
+      "kind": "sfx",
+      "text": "Colour conversion: gentle rising tone"
+    },
+    {
+      "t": 234,
+      "kind": "narration",
+      "text": "Feed that spectrum into a model of human colour vision, and the star’s apparent colour changes. That is how the green is modelled."
+    },
+    {
+      "t": 260,
+      "kind": "sfx",
+      "text": "Transition back to the star"
+    },
+    {
+      "t": 264,
+      "kind": "narration",
+      "text": "A white dwarf is the dense remnant of an evolved star. This diagram is a schematic, not a view inside."
+    },
+    {
+      "t": 296,
+      "kind": "narration",
+      "text": "A typical white dwarf is roughly the size of Earth, with about half the mass of the Sun."
+    },
+    {
+      "t": 320,
+      "kind": "sfx",
+      "text": "Transition into the former planetary system"
+    },
+    {
+      "t": 326,
+      "kind": "narration",
+      "text": "Here, the debris is the remains of a former planetary system. Paths and distances are illustrative."
+    },
+    {
+      "t": 362,
+      "kind": "narration",
+      "text": "Dust and rock, lit by the remnant’s faint light, spiral inward over time."
+    },
+    {
+      "t": 392,
+      "kind": "narration",
+      "text": "One last orbit around the star, and its modelled colour."
+    },
+    {
+      "t": 428,
+      "kind": "music",
+      "text": "Music swell for the pullback"
+    },
+    {
+      "t": 430,
+      "kind": "narration",
+      "text": "The universe is more colourful than we imagined."
+    },
+    {
+      "t": 452,
+      "kind": "narration",
+      "text": "What should we explore next?"
+    },
+    {
+      "t": 466,
+      "kind": "music",
+      "text": "Music resolves; fade out by 08:00"
+    }
+  ]
+}
