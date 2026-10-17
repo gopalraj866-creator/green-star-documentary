@@ -1,0 +1,106 @@
+name: Render Green Star documentary
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "What to render"
+        type: choice
+        default: "1080p"
+        options: ["1080p", "4k", "shorts", "all"]
+      quick_test:
+        description: "Quick test: render only the first 60 frames (2 s) of each profile"
+        type: boolean
+        default: false
+      chunk_frames:
+        description: "Frames per job (blank = default: 300 for 1080p, 150 for 4K, 295 for Shorts)"
+        type: string
+        default: ""
+      audio_file:
+        description: "Optional audio file in the repo (e.g. audio/narration.mp3) to mux into the 1080p/4K video"
+        type: string
+        default: ""
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Verify timeline, camera path and exact 480 s runtime
+        run: npm run verify
+      - name: Build render matrix
+        id: m
+        run: |
+          M=$(node scripts/plan-matrix.mjs "${{ inputs.profile }}" "${{ inputs.quick_test }}" "${{ inputs.chunk_frames }}")
+          echo "matrix=$M" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJSON(needs.verify.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Install Chromium and ffmpeg
+        run: |
+          npx playwright-core install --with-deps chromium
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - name: Render frames ${{ matrix.start }}..+${{ matrix.count }} (${{ matrix.profile }})
+        run: |
+          node scripts/render.mjs --profile "${{ matrix.profile }}" \
+            --start ${{ matrix.start }} --count ${{ matrix.count }} \
+            --out "chunks/${{ matrix.profile }}/chunk_${{ matrix.idx }}.mp4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.profile }}-${{ matrix.idx }}
+          path: chunks/${{ matrix.profile }}/chunk_${{ matrix.idx }}.mp4
+          retention-days: 2
+          if-no-files-found: error
+
+  assemble:
+    needs: [verify, render]
+    if: ${{ always() && needs.render.result == 'success' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: ${{ fromJSON(inputs.profile == 'all' && '["1080p","4k","shorts"]' || format('["{0}"]', inputs.profile)) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-${{ matrix.profile }}-*
+          path: chunks
+          merge-multiple: true
+      - name: Join chunks (and check the runtime)
+        run: |
+          EXPECT=480; [ "${{ matrix.profile }}" = "shorts" ] && EXPECT=59
+          [ "${{ inputs.quick_test }}" = "true" ] && EXPECT=2
+          AUDIO=""
+          if [ -n "${{ inputs.audio_file }}" ] && [ "${{ matrix.profile }}" != "shorts" ]; then AUDIO="--audio ${{ inputs.audio_file }}"; fi
+          mkdir -p output
+          node scripts/assemble.mjs --dir chunks --out "output/TechnicalTalkIndia_GreenStar_${{ matrix.profile }}.mp4" --expect $EXPECT $AUDIO
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GreenStar-${{ matrix.profile }}
+          path: output/*.mp4
+          retention-days: 14
